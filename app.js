@@ -21,8 +21,9 @@ var seattle = {         //Create function at the top(separate function list of t
     var seattleHeader = document.getElementById(this.name + 'Header');
       seattleHeader.textContent = this.name;
     for (var i = 0; i < this.storeHrs.length; i++) {
-      var custThisHour = getRandomNum(this.minCust,this.maxCust);
+      var custThisHour = getRandomNum(this.minCust,this.maxCust); 
       // rounding cookies per hour total
+      //could take line 24 -26 into a function instead and then call the custPerHr function
       var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
       this.cookieSalesPerHr.push(cookiesPerHr); //use push method to add cookie sales per hr onto array
       // add new number to the total
