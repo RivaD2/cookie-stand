@@ -8,12 +8,12 @@ function getRandomNum(min, max) {
 }
 
 // Create object with properties
-var seattle = {
-  name: 'seattle',
-  minCust: 23,
-  maxCust: 65,
-  totalCookies: 0,
-  cookieSalesPerHr: [],
+var seattle = {         //Create function at the top(separate function list of times 19-37 and put it outside of object)
+  name: 'seattle', // by giving the object a property of name, we can use the this.name to reference the object, making it easier to create copies
+  minCust: 23,          
+  maxCust: 65,          // there needs to be five neat objects with their properties and ONE FUNCTION that does everything
+  totalCookies: 0,         //this way, we can write function and just pass in the props 
+  cookieSalesPerHr: [],   
   avgCustSale: 6.3,
   storeHrs: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
   listOfTimes: function() {
