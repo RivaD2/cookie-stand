@@ -1,5 +1,9 @@
 'use strict'
 
+
+// Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
+
+function store (name, minCust, maxCust, totalCookies, cookieSalesPerHr,avgCustSale,storeHrs)
 function getRandomNum(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
