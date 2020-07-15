@@ -4,34 +4,34 @@
 // Lab 07: Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
 
 //FIRST CONSTRUCTOR FUNCTION DEFINES TEMPLATES FOR HOTELS
+
 var storeHrs = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
-function Store (name, minCust, maxCust, totalCookies, cookieSalesPerHr,avgCustSale,storeHrs) {
+function Store (name, minCust, maxCust,avgCustomerSale) {
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
-  this.totalCookies = totalCookies;
+  this.totalCookies = 0;
   this.cookieSalesPerHr = [];
   this.avgCustSale = avgCustomerSale;
-  this.storeHrs = storeHrs;
+  this.storeHrs = storeHrs;  
+}
+Store.prototype.render= function() {
+  var mainTable = document.getElementById("mainTable");
+  var storeTableRow = document.createElement('tr');
+  var storeTableData = document.createElement('td');
+  storeTableData.textContent = this.name;
+  storeTableRow.appendChild(storeTableData);
+  mainTable.appendChild(storeTableRow);
 }
 
-//SECOND, 5 DIFFERENT INSTANCES OF THE STORE OBJECT ARE CREATED
-  var seattleStore = new Store('Seattle',23,65,0,[],6.3,); // new Store(parameters)
-  var tokyoStore = new Store('Tokyo',3,24,0,[],1.2,);  // new variables aren't necessary 
-  var dubaiStore = new Store('Dubai',11,38,0,[],3.7,);
-  var parisStore = new Store('Paris',20,38,0,[],2.3,);
-  var limaStore = new Store('Lima',2,16,0,[],4.7,);
-
-// NOW I HAVE INSTANCES AND CAN ACCESS PROPERTIES USING . NOTATION
   // prototypes belong here// this will generate random Customers per hour
 
-  //Store.prototype.getRandomNum = function(minCust,maxCust) {
-  //create loop to iterate through storeHrs and generate random customers per hr for each hr of ops
-  //take a look at total cookie amount
-
-
-function listOfTimes() {
+  // Store.prototype.getRandomNum = function(minCust,maxCust) {
+  //   for(var i = 0; i < 14;; i++);
+  //   var randomCustomers = Math.floor(Math.random() * (maxCust - minCust)) + minCust;
+   
+Store.prototype.listOfTimes = function() {
   var seattleObject = document.getElementById(this.name + 'Cookies');
   var seattleHeader = document.getElementById(this.name + 'Header');
     seattleHeader.textContent = this.name;
@@ -53,18 +53,35 @@ function listOfTimes() {
    seattleObject.appendChild(totalList);
 
   }
-listOfTimes();
 
+//SECOND, 5 DIFFERENT INSTANCES OF THE STORE OBJECT ARE CREATED
+
+var seattleStore = new Store('Seattle',23,65,6.3); // new Store(arguments)
+var tokyoStore = new Store('Tokyo',3,24,1.2);  // new variables aren't necessary 
+var dubaiStore = new Store('Dubai',11,38,3.7);
+var parisStore = new Store('Paris',20,38,2.3);
+var limaStore = new Store('Lima',2,16,4.7);
+
+seattleStore.listOfTimes();
+seattleStore.render();
+tokyoStore.listOfTimes();
+tokyoStore.render();
+dubaiStore.listOfTimes();
+dubaiStore.render();
+parisStore.listOfTimes();
+parisStore.render();
+limaStore.listOfTimes();
+limaStore.render();
 
 
 
 
 function getRandomNum(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
+ min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (max - min)) + min;
 
-}
+ }
 
 // Create object with properties
 // var seattle = {         //Create function at the top(separate function list of times 19-37 and put it outside of object)
@@ -239,4 +256,4 @@ function getRandomNum(min, max) {
 //   }
 
 // }
-// lima.listOfTimes();
+//lima.listOfTimes()
