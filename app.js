@@ -5,7 +5,7 @@
 
 
 
-//FIRST CONSTRUCTOR FUNCTION DEFINES TEMPLATES FOR HOTELS
+//FIRST CONSTRUCTOR FUNCTION DEFINES TEMPLATES FOR STORES
 // storeHrs is a global variable because every store needs it
 
 var storeHrs = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
@@ -20,16 +20,17 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
   this.storeHrs = storeHrs;  
 }
 
-Store.prototype.render= function() {
-  var mainTable = document.getElementById("mainTable");
-  var storeTableRow = document.createElement('tr');
+Store.prototype.render= function() {                   // Start here for table creation and add html element if it doesn't exist (that is step 2)
+  var mainTable = document.getElementById("mainTable"); // We get a reference to the table here
+  var storeTableRow = document.createElement('tr');   // create a table row because we need one ROW FOR EVERY STORE --(working inward toward child elements)
   //create table data for store name
-  var storeNameTableData = document.createElement('td');
+  var storeNameTableData = document.createElement('td'); // EVERY ROW HAS TABLE DATA so we had to reference to the td 
   // set the content of the table data
-  storeNameTableData.textContent = this.name;
+  storeNameTableData.textContent = this.name; 
   //added table data to the ROW
   storeTableRow.appendChild(storeNameTableData);
 
+  //* IF I WANT TO CREATE ANOTHER TABLE, I WOULD USE ANOTHER RENDER FUNCTION(use name like employeeTable)
 
 // Loop through storeHrs and create table data for each one
 // I will need to calc cookiesSold (create var) and set it to text content of table data
