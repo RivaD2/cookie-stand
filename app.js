@@ -16,14 +16,36 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
   this.avgCustSale = avgCustomerSale;
   this.storeHrs = storeHrs;  
 }
+
 Store.prototype.render= function() {
   var mainTable = document.getElementById("mainTable");
   var storeTableRow = document.createElement('tr');
-  var storeTableData = document.createElement('td');
-  storeTableData.textContent = this.name;
-  storeTableRow.appendChild(storeTableData);
+  //create table data for store name
+  var storeNameTableData = document.createElement('td');
+  // set the content of the table data
+  storeNameTableData.textContent = this.name;
+  //added table data to the ROW
+  storeTableRow.appendChild(storeNameTableData);
+
+// Loop through storeHrs and create table data for each one
+// I will need to calc cookiesSold (create var) and set it to text content of table data
+// Append table data to row
+for (var i = 0; i < this.storeHrs.length; i++) {
+  var custThisHour = getRandomNum(this.minCust,this.maxCust); 
+  var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
+  this.cookieSalesPerHr.push(cookiesPerHr); //use push method to add cookie sales per hr onto array
+  this.totalCookies = this.totalCookies + cookiesPerHr; //create array for cookie sales each hr
+  var specificHourTableData = document.createElement('td');
+  specificHourTableData.textContent = cookiesPerHr;
+  storeTableRow.appendChild(specificHourTableData);
+  
+} 
+
+  // added the row to the table
   mainTable.appendChild(storeTableRow);
 }
+
+
 
   // prototypes belong here// this will generate random Customers per hour
 
@@ -31,30 +53,31 @@ Store.prototype.render= function() {
   //   for(var i = 0; i < 14;; i++);
   //   var randomCustomers = Math.floor(Math.random() * (maxCust - minCust)) + minCust;
    
-Store.prototype.listOfTimes = function() {
-  var seattleObject = document.getElementById(this.name + 'Cookies');
-  var seattleHeader = document.getElementById(this.name + 'Header');
-    seattleHeader.textContent = this.name;
-  for (var i = 0; i < this.storeHrs.length; i++) {
-    var custThisHour = getRandomNum(this.minCust,this.maxCust); 
-    // rounding cookies per hour total
-    //could take line 24 -26 into a function instead and then call the custPerHr function
-    var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
-    this.cookieSalesPerHr.push(cookiesPerHr); //use push method to add cookie sales per hr onto array
-    // add new number to the total
-    this.totalCookies = this.totalCookies + cookiesPerHr; //create array for cookie sales each hr
-    var timesList = document.createElement('li');
-    timesList.textContent = this.storeHrs[i] + cookiesPerHr + 'cookies';
-    seattleObject.appendChild(timesList);
+// Store.prototype.listOfTimes = function() {
+//   var seattleObject = document.getElementById(this.name + 'Cookies');
+//   var seattleHeader = document.getElementById(this.name + 'Header');
+//     seattleHeader.textContent = this.name;
+//   for (var i = 0; i < this.storeHrs.length; i++) {
+//     var custThisHour = getRandomNum(this.minCust,this.maxCust); 
+//     // rounding cookies per hour total
+//     //could take line 24 -26 into a function instead and then call the custPerHr function
+//     var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
+//     this.cookieSalesPerHr.push(cookiesPerHr); //use push method to add cookie sales per hr onto array
+//     // add new number to the total
+//     this.totalCookies = this.totalCookies + cookiesPerHr; //create array for cookie sales each hr
+//     var timesList = document.createElement('li');
+//     timesList.textContent = this.storeHrs[i] + cookiesPerHr + 'cookies';
+//     seattleObject.appendChild(timesList);
     
-  } 
-   var totalList = document.createElement('li');
-   totalList.textContent = 'Total: ' + this.totalCookies;
-   seattleObject.appendChild(totalList);
+//   } 
+//    var totalList = document.createElement('li');
+//    totalList.textContent = 'Total: ' + this.totalCookies;
+//    seattleObject.appendChild(totalList);
 
-  }
+  // }
 
 //SECOND, 5 DIFFERENT INSTANCES OF THE STORE OBJECT ARE CREATED
+// Below each instance are the render method calls/function calls for each location using listOfTimes
 
 var seattleStore = new Store('Seattle',23,65,6.3); // new Store(arguments)
 var tokyoStore = new Store('Tokyo',3,24,1.2);  // new variables aren't necessary 
@@ -62,15 +85,15 @@ var dubaiStore = new Store('Dubai',11,38,3.7);
 var parisStore = new Store('Paris',20,38,2.3);
 var limaStore = new Store('Lima',2,16,4.7);
 
-seattleStore.listOfTimes();
-seattleStore.render();
-tokyoStore.listOfTimes();
+//seattleStore.listOfTimes();
+seattleStore.render(); // render method still holds the functionality that listOfTimes function had
+// tokyoStore.listOfTimes();
 tokyoStore.render();
-dubaiStore.listOfTimes();
+// dubaiStore.listOfTimes();
 dubaiStore.render();
-parisStore.listOfTimes();
+// parisStore.listOfTimes();
 parisStore.render();
-limaStore.listOfTimes();
+// limaStore.listOfTimes();
 limaStore.render();
 
 
