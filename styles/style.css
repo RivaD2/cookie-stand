@@ -1,24 +1,79 @@
 body {
-background-color:rgb(238, 177, 170);
+background-color:rgb(104, 170, 104);
+font-family: 'Englebert', sans-serif;
+background-blend-mode: hue;
 }
 
-#banner {
+main {
+  margin: 0 auto;
+}
+h2 {
+  text-align: center;
+}
+#headerPageOne  {
+  text-align: center;
+  font-size: 25px;
+  font-family: Comic Sans MS, Calibri;
+}
+#pageOneNav {
+  float: right;
+}
+.aboutcookies {
+  margin: 0 auto;
+  text-align:center;
+  font-weight: bold;
+  font-size: 18px;
+  margin:0 auto;
+}
+#bannerOne {
   background-color:salmon;
+  padding-top: 40px;px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  text-align:center;
+
+}
+
+#bannerTwo {
+  background-color:salmon;
+  background-blend-mode:
   padding-top: 80px;
   padding-bottom: 80px;
   text-align:center;
   margin-bottom: 40px;
 }
 
+#bannerText {
+  font-style:Bold;
+  font-size:30px;
+}
 
+#mainTable {
+  margin: 0 auto;
+  font-family:'Times New Roman', Times, serif;
 
+}
 
+img {
+  height: 250px;
 
+}
 
-
-
+#family {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-bottom: 25px;
+}
 
 td {
   border:solid 1px;
   padding: 4px;
+
+}
+
+footer {
+  
+  background-color: salmon;
+  overflow:hidden;
 }
