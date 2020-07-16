@@ -20,7 +20,11 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
   this.storeHrs= storeHrs;
 }
 
-//NEW CODE FOR STORE HOUR TIMES HEADER AND TOTAL FOOTER, delete all if code breaks // LAB 08b START:
+
+
+//LAB08B
+//TODO: NEW CODE FOR STORE HOURS HEADER, HOURLY TOTALS FOOTER, AND DAILY LOCATION TOTAL// 
+//LAB08B
 // this.timeDisplay = function() {
 //   Store.prototype.render= function() {
 //   var mainTable = document.getElementById('mainTable'); 
@@ -44,7 +48,10 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
 //for every hour randomly generate that hours cookies/customers
 //}
 
-//NEW CODE FOR FORM 
+
+
+//LAB09 FORM SUBMISSION:
+
 var storeForm = document.getElementById('addStore');
 storeForm.addEventListener("submit", addStore);
 function addStore(event) {
