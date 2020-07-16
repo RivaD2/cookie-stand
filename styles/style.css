@@ -32,11 +32,11 @@ h2 {
   font-size: 25px;
   font-family: Comic Sans MS, Calibri;
   margin: 0 auto;
-  padding-left: 30px;
+  padding-left: 40px;
 }
 
 #pageOneNav {
-  float: right;
+  float: left;
   font-size:20px;
 }
 
@@ -60,11 +60,8 @@ h2 {
 
 #bannerTwo {
   background-color:salmon;
-  background-blend-mode:
-  padding-top: 40px;
-  padding-bottom: 40px;
   text-align:center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 #bannerText {
@@ -77,6 +74,7 @@ h2 {
   font-family:'Times New Roman', Times, serif;
   font-style:bold;
   border: thick 4px;
+  padding-bottom: 60px;
 }
 
 img {
@@ -97,22 +95,48 @@ td {
 
 }
 
+#addStore {
+  font-style:bold;
+  font-size: 20px;
+  color: black;
+  margin:0 auto;
+  display:inline-block;
+}
+
+#newStore {
+  font-size: 25px;
+}
+
+#submit {
+  font-size: 15px;
+  width: 175px;
+}
+
 footer {
   background-color: salmon;
   overflow:hidden;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   color:black;
-  font-size: 20px;
+  font-size: 25px;
   font-style:bold;
 }
 #locations {
-  font-size: 32px;
+  font-size: 20px;
   margin: 0 auto;
   float:center;
+  color: rgb(27, 88, 27);
   
 }
+#addresses {
+  float:center;
+  margin: 0 auto;
+  font-size: 25px;
+}
 
-#threefish {
-  filter: 20p
+#threeFish {
+  float: right;
+}
+#merch {
+  margin:0 auto;
 }

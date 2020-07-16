@@ -24,51 +24,63 @@
       <li>
         <a href="/sales.html">Sales By Location</a>
      </li>
+     <li>
+      <a href="/merch-page">Pat's Merchandise Page</a>
+    </li>
     </ul>
   </nav>
 </header>
 <main>
   <p class="location"> Sales By Location</p>
-  <table id ="mainTable">
-  </table>
-
-    <form id="addStore">
-      <fieldset>
-        <legend> Add New Store</legend>
-      </fieldset>
-        <input type="text" name="name">
-        <input type="text" name="minCust">
-        <input type="text" name="maxCust">
-        <input type="text" name="avgCustomerSale">
-        <input type="submit" name="submit">
-  </form>
-
-
-
+<table id ="mainTable">
+</table>
+     <form id="addStore">
+        <fieldset>
+          <legend id="newStore"> Add New Store</legend>
+        <fieldset>
+          <legend>Name
+            <input type="text" name="name">
+          </legend>
+          <legend>Minimum Customers
+            <input type="text" name="minCust">
+          </legend>
+            <legend>Maximum Customers
+          <input type="text" name="maxCust">
+            </legend>
+          <legend>Average Customer Sales
+            <input type="text" name="avgCustomerSale">
+          </legend>
+            <input type="submit" name="submit" id="submit">
+      </form>
 
 <script src="app.js"></script>
 
-
 <footer>Store Locations & Hours:
   <hr />
+  <ul id="addresses">
+    <li>Seattle:(206)-544-4343</li>
+      <li>Tokyo: 080-1234-5678</li>
+      <li>Dubai: 971-2222-4587</li>
+      <li>Paris: 211-9854-2147</li>
+      <li>Lima: 598-1234-7854</li>
+  </ul>
   <table id="locations">
-    <img src="cookie-stand-images/threefish.jpg" id="threefish"alt="three fish">
     <tr>
       <td>
         <ul>
-        <li>Seattle</li>
+        <li>Seattle:324 4th Ave S, 98103</li>
       </td>
       <td>
-        <li>Tokyo</li>
+        <li>Tokyo:106-0044東京都</li>
       </td>
       <td>
-        <li>Dubai</li>
+        <li>Dubai: 66 Al Marsa St,0000</li>
       </td>
       <td>
-        <li>Paris</li>
+        <li>Paris:48 Blvd. Jourdan, 75014 Paris, France.</li>
       </td>
       <td>
-        <li>Lima</li>
+        <li>Lima: Av. Larco 1301, Miraflores</li>
       </td>
       <td>
         <li>Store Hours: 6am - 7pm PST</li>
@@ -76,7 +88,7 @@
     </ul>
     <tr>
     </table>
-    </footer>
+</footer>
 </main>
 </body>
 </html>
