@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 
 // Lab 07: Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
@@ -17,29 +17,42 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
   this.totalCookies = 0;
   this.cookieSalesPerHr = [];
   this.avgCustSale = avgCustomerSale;
-  this.storeHrs = storeHrs;  
+  this.storeHrs= storeHrs;
 }
+
+//NEW CODE STARTING HERE, delete all if code breaks // LAB 08b START:
+// this.timeDisplay = function() {
+//   Store.prototype.render= function() {
+//   var mainTable = document.getElementById('mainTable'); 
+//   var storeTableRow = document.createElement('tr');
+//   var storeNameTableData = document.createElement('td'); 
+//   storeNameTableData.textContent = this.name; 
+//   storeTableRow.appendChild(storeNameTableData);
+// }
+// for (var i = 0; i < this.storeHrs.length; i++) {
+
+// }
+
+
+
+
+
+
+
 
 //** Need to add totals to table and times at top */
 Store.prototype.render= function() {// Start here for table creation and add html element if it doesn't exist (that is step 2)
   var mainTable = document.getElementById('mainTable'); // We get a reference to the table here
   var storeTableRow = document.createElement('tr');// create a table row because we need one ROW FOR EVERY STORE --(working inward toward child elements)
   //create table data for store name
-  var storeNameTableData = document.createElement('td'); // EVERY ROW HAS TABLE DATA so we had to reference to the td 
+  var storeNameTableData = document.createElement('td'); // EVERY ROW HAS TABLE DATA so we had to reference to the td
   // set the content of the table data
-  storeNameTableData.textContent = this.name; //this is not a method, we are assigning a property 
+  storeNameTableData.textContent = this.name; //this is not a method, we are assigning a property
   //added table data to the ROW object and by passing it in
   storeTableRow.appendChild(storeNameTableData);
 
 
   //* IF I WANT TO CREATE ANOTHER TABLE, I WOULD USE ANOTHER RENDER FUNCTION(use name like employeeTable)
-
-  //TO FINISH TABLE
-  //add global footerFunction for TOTAL for all stores
-  //add global headerFunction to Store Hours display
-  // function tableFooter() {
-  // }
-
 
 
   // Loop through storeHrs and create table data for each one
@@ -47,19 +60,18 @@ Store.prototype.render= function() {// Start here for table creation and add htm
   // Append table data to row
 
   for (var i = 0; i < this.storeHrs.length; i++) {
-    var custThisHour = this.getRandomNum(this.minCust,this.maxCust); 
+    var custThisHour = this.getRandomNum(this.minCust,this.maxCust);
     var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
-    this.cookieSalesPerHr.push(cookiesPerHr);                    //use push method to add cookie sales per hr onto array
-    this.totalCookies = this.totalCookies + cookiesPerHr;         //create array for cookie sales each hr
+    this.cookieSalesPerHr.push(cookiesPerHr);//use push method to add cookie sales per hr onto array
+    this.totalCookies = this.totalCookies + cookiesPerHr; //create array for cookie sales each hr
     var specificHourTableData = document.createElement('td');
     specificHourTableData.textContent = cookiesPerHr;
     storeTableRow.appendChild(specificHourTableData);
-  } 
+  }
 
   // added the row to the table
   mainTable.appendChild(storeTableRow);
 };
-
 
 
 Store.prototype.getRandomNum = function(min, max) { // Took getRandomNum and we turned it into a method
@@ -70,12 +82,11 @@ Store.prototype.getRandomNum = function(min, max) { // Took getRandomNum and we 
 //math.random MDN reference above used with prototype method
 
 
-
 //SECOND, 5 DIFFERENT INSTANCES OF THE STORE OBJECT ARE CREATED
 // Below each instance are the render method calls/function calls for each location using listOfTimes
 
 var seattleStore = new Store('Seattle',23,65,6.3); // new Store(arguments)
-var tokyoStore = new Store('Tokyo',3,24,1.2);// new variables aren't necessary 
+var tokyoStore = new Store('Tokyo',3,24,1.2);// new variables aren't necessary
 var dubaiStore = new Store('Dubai',11,38,3.7);
 var parisStore = new Store('Paris',20,38,2.3);
 var limaStore = new Store('Lima',2,16,4.7);
