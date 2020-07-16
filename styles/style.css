@@ -35,6 +35,7 @@ h2 {
 
 #pageOneNav {
   float: right;
+  font-size:20px;
 }
 
 .aboutcookies {
@@ -42,7 +43,9 @@ h2 {
   text-align:center;
   font-weight: bold;
   font-size: 18px;
-  margin:0 auto;
+  float: left;
+  padding-top: 30px;
+  padding-left: 50px;
 }
 
 #bannerOne {
@@ -71,37 +74,20 @@ h2 {
 #mainTable {
   margin: 0 auto;
   font-family:'Times New Roman', Times, serif;
+  font-style:bold;
+  border: thick 4px;
 }
 
 img {
   height: 250px;
 
 }
-
-#family {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-bottom: 25px;
-  border-radius: 5px;
-
+#photos {
+  display: inline-block;
+  float:center;
+  padding-left: 90px;
 }
 
-#fishCookie {
-  margin-left: auto;
-  margin-right: auto;
-  display: inline;
-  padding-bottom: 25px;
-  border-radius: 5px;
-}
-
-#cookieCutter {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-bottom: 25px;
-  border-radius: 5px;
-}
 
 td {
   border:solid 1px;
@@ -115,6 +101,7 @@ footer {
   overflow:hidden;
   padding-top: 50px;
   padding-bottom: 50px;
-  color:rgb(116, 83, 60);
+  color:black;
   font-size: 20px;
+  font-style:bold;
 }
