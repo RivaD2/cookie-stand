@@ -20,24 +20,44 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
   this.storeHrs= storeHrs;
 }
 
-//NEW CODE STARTING HERE, delete all if code breaks // LAB 08b START:
+//NEW CODE FOR STORE HOUR TIMES HEADER AND TOTAL FOOTER, delete all if code breaks // LAB 08b START:
 // this.timeDisplay = function() {
 //   Store.prototype.render= function() {
 //   var mainTable = document.getElementById('mainTable'); 
 //   var storeTableRow = document.createElement('tr');
-//   var storeNameTableData = document.createElement('td'); 
+//   var storeNameTableData = document.createElement('th'); 
 //   storeNameTableData.textContent = this.name; 
 //   storeTableRow.appendChild(storeNameTableData);
-// }
-// for (var i = 0; i < this.storeHrs.length; i++) {
+//    mainTable.appendChild(storeTableRow);
 
 // }
+// for (var i = 0; i < this.storeHrs.length; i++) {  //this will calculate cookie sales for one hr
+//var cookies = this.calculateCookiesSold();
+//this.cookieSalesPerHr.push(cookies);
+// }
+//};
+// cookieStore.prototype.calculateCookiesSold =function() {
+//return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min * this.avgCustomerSale);
+// };
 
+//cookiestore.protype.calculateHourlySales = function() {
+//for every hour randomly generate that hours cookies/customers
+//}
 
+//NEW CODE FOR FORM 
+var storeForm = document.getElementById('addStore');
+storeForm.addEventListener("submit", addStore);
+function addStore(event) {
+  event.preventDefault();
 
+  var name =event.target.name.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgCustomerSale = event.target.avgCustomerSale.value;
 
-
-
+  var newStore = new Store (name, minCust, maxCust,avgCustomerSale);
+  newStore.render();
+}
 
 
 //** Need to add totals to table and times at top */

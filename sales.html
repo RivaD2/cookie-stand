@@ -31,17 +31,52 @@
   <p class="location"> Sales By Location</p>
   <table id ="mainTable">
   </table>
+
+    <form id="addStore">
+      <fieldset>
+        <legend> Add New Store</legend>
+      </fieldset>
+        <input type="text" name="name">
+        <input type="text" name="minCust">
+        <input type="text" name="maxCust">
+        <input type="text" name="avgCustomerSale">
+        <input type="submit" name="submit">
+  </form>
+
+
+
+
 <script src="app.js"></script>
 
-<footer>Store Locations
-  <ul>
-    <li>Seattle</li>
-    <li>Tokyo</li>
-    <li>Dubai</li>
-    <li>Paris</li>
-    <li>Lima</li>
-  </ul>
-</footer>
+
+<footer>Store Locations & Hours:
+  <hr />
+  <table id="locations">
+    <img src="cookie-stand-images/threefish.jpg" id="threefish"alt="three fish">
+    <tr>
+      <td>
+        <ul>
+        <li>Seattle</li>
+      </td>
+      <td>
+        <li>Tokyo</li>
+      </td>
+      <td>
+        <li>Dubai</li>
+      </td>
+      <td>
+        <li>Paris</li>
+      </td>
+      <td>
+        <li>Lima</li>
+      </td>
+      <td>
+        <li>Store Hours: 6am - 7pm PST</li>
+      </td>
+    </ul>
+    <tr>
+    </table>
+    </footer>
 </main>
 </body>
 </html>
