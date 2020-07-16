@@ -3,10 +3,10 @@
 
 // Lab 07: Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
 
-
-
 //FIRST CONSTRUCTOR FUNCTION DEFINES TEMPLATES FOR STORES
 // storeHrs is a global variable because every store needs it
+
+
 
 var storeHrs = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
@@ -67,7 +67,7 @@ function addStore(event) {
 }
 
 
-//** Need to add totals to table and times at top */
+
 Store.prototype.render= function() {// Start here for table creation and add html element if it doesn't exist (that is step 2)
   var mainTable = document.getElementById('mainTable'); // We get a reference to the table here
   var storeTableRow = document.createElement('tr');// create a table row because we need one ROW FOR EVERY STORE --(working inward toward child elements)
@@ -79,7 +79,6 @@ Store.prototype.render= function() {// Start here for table creation and add htm
   storeTableRow.appendChild(storeNameTableData);
 
 
-  //* IF I WANT TO CREATE ANOTHER TABLE, I WOULD USE ANOTHER RENDER FUNCTION(use name like employeeTable)
 
 
   // Loop through storeHrs and create table data for each one
@@ -101,6 +100,7 @@ Store.prototype.render= function() {// Start here for table creation and add htm
 };
 
 
+
 Store.prototype.getRandomNum = function(min, max) { // Took getRandomNum and we turned it into a method
   min = Math.ceil(min); // The same code still works in the method
   max = Math.floor(max);// THe only thing I had to change was the function to the method, and line34 to this.getRandom
@@ -109,7 +109,7 @@ Store.prototype.getRandomNum = function(min, max) { // Took getRandomNum and we 
 //math.random MDN reference above used with prototype method
 
 
-//SECOND, 5 DIFFERENT INSTANCES OF THE STORE OBJECT ARE CREATED
+
 // Below each instance are the render method calls/function calls for each location using listOfTimes
 
 var seattleStore = new Store('Seattle',23,65,6.3); // new Store(arguments)
@@ -117,6 +117,7 @@ var tokyoStore = new Store('Tokyo',3,24,1.2);// new variables aren't necessary
 var dubaiStore = new Store('Dubai',11,38,3.7);
 var parisStore = new Store('Paris',20,38,2.3);
 var limaStore = new Store('Lima',2,16,4.7);
+
 
 
 //seattleStore.listOfTimes();
