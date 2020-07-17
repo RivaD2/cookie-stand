@@ -23,23 +23,23 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
 
 
 //LAB08B
-//TODO: NEW CODE FOR STORE HOURS HEADER, HOURLY TOTALS FOOTER, AND DAILY LOCATION TOTAL// 
+//TODO: NEW CODE FOR STORE HOURS HEADER, HOURLY TOTALS FOOTER, AND DAILY LOCATION TOTAL ROW// 
 //LAB08B
-// this.timeDisplay = function() {
-//   Store.prototype.render= function() {
-//   var mainTable = document.getElementById('mainTable'); 
-//   var storeTableRow = document.createElement('tr');
-//   var storeNameTableData = document.createElement('th'); 
-//   storeNameTableData.textContent = this.name; 
-//   storeTableRow.appendChild(storeNameTableData);
-//    mainTable.appendChild(storeTableRow);
 
-// }
-// for (var i = 0; i < this.storeHrs.length; i++) {  //this will calculate cookie sales for one hr
-//var cookies = this.calculateCookiesSold();
-//this.cookieSalesPerHr.push(cookies);
-// }
-//};
+function timeDisplay() {
+  var mainTable = document.getElementById('mainTable');
+  var storeTableRow = document.createElement('tr');
+  storeTableRow.appendChild(document.createElement('th'));
+  for (var i = 0; i < storeHrs.length; i++) {
+    var storeHrsTableCell = document.createElement('th');
+    storeHrsTableCell.textContent = storeHrs[i];
+    storeTableRow.appendChild(storeHrsTableCell);
+  }
+
+  mainTable.appendChild(storeTableRow);
+}
+
+
 // cookieStore.prototype.calculateCookiesSold =function() {
 //return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min * this.avgCustomerSale);
 // };
@@ -121,11 +121,12 @@ var limaStore = new Store('Lima',2,16,4.7);
 
 
 //seattleStore.listOfTimes();
+timeDisplay();
+
 seattleStore.render(); // render method still holds the functionality that listOfTimes function had
 tokyoStore.render();
 dubaiStore.render();
 parisStore.render();
 limaStore.render();
-
 
 
