@@ -3,9 +3,6 @@ background-color:rgb(104, 170, 104);
 font-family: 'Englebert', sans-serif;
 background-blend-mode: hue;
 }
-.bar {
-  font-size: 20px;
-}
 main {
   margin: 0 auto;
 }
@@ -36,7 +33,6 @@ h2 {
 }
 
 #pageOneNav {
-  float: left;
   font-size:20px;
 }
 
@@ -83,11 +79,10 @@ img {
 }
 #photos {
   display: inline-block;
-  float:center;
-  padding-left: 70px;
+  float: center;
+  max-width:90%;
   
 }
-
 
 td {
   border:solid 1px;
