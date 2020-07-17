@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,84 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Englebert&display=swap" rel="stylesheet">
 </head>
+
 <body>
-   <div id ="bannerTwo"><img src="cookie-stand-images/cookie-stand-chinookfish.jpg" alt="chinookfish2">
-  <div id="bannerText">Pat's Salmon Cookie Stand Sales Data Page</div>
+  <main>
+    <div id ="bannerTwo"><img src="cookie-stand-images/cookie-stand-chinookfish.jpg" alt="chinookfish2">
+      <div id="bannerText">Pat's Salmon Cookie Stand Sales Data Page</div>
   </div>
-   <header>
-   <nav>
-    <ul class="bar">
+<header>
+  <nav id="pageOneNav">
+    <ul>
       <li>
-      <a href="/index.html">Home</a>
+        <a href="index.html">Home</a>
       </li>
-    <li>
-      <a href="/sales.html">Sales By Location</a>
+      <li>
+        <a href="sales.html">Sales By Location</a>
+     </li>
+     <li>
+      <a href="merch-page">Pat's Merchandise Page</a>
     </li>
     </ul>
   </nav>
-  </header>
-  <main>
+</header>
+<main>
   <p class="location"> Sales By Location</p>
-<table>
-  <table id ="mainTable">
-  </table>
+<table id ="mainTable">
+</table>
+     <form id="addStore">
+        <fieldset>
+          <legend id="newStore"> Add New Store</legend>
+        <fieldset>
+          <legend>Name
+            <input type="text" name="name">
+          </legend>
+          <legend>Minimum Customers
+            <input type="text" name="minCust">
+          </legend>
+            <legend>Maximum Customers
+          <input type="text" name="maxCust">
+            </legend>
+          <legend>Average Customer Sales
+            <input type="text" name="avgCustomerSale">
+          </legend>
+            <input type="submit" name="submit" id="submit">
+      </form>
 
-  
-  
+<script src="app.js"></script>
 
-
-
-
-  <script src="app.js"></script>
-  <footer> Store Locations>
-    <ul>
-    <li>Seattle</li>
-    <li>Tokyo</li>
-    <li>Dubai</li>
-    <li>Paris</li>
-    <li>Lima</li>
-    </ul>
-  </footer>
+<footer>Store Locations & Hours:
+  <hr />
+  <ul id="addresses">
+    <li>Seattle:(206)-544-4343</li>
+      <li>Tokyo: 080-1234-5678</li>
+      <li>Dubai: 971-2222-4587</li>
+      <li>Paris: 211-9854-2147</li>
+      <li>Lima: 598-1234-7854</li>
+  </ul>
+  <table id="locations">
+    <tr>
+      <td>
+        <li>Seattle:324 4th Ave S, 98103</li>
+      </td>
+      <td>
+        <li>Tokyo:106-0044東京都</li>
+      </td>
+      <td>
+        <li>Dubai: 66 Al Marsa St,0000</li>
+      </td>
+      <td>
+        <li>Paris:48 Blvd. Jourdan, 75014 Paris, France.</li>
+      </td>
+      <td>
+        <li>Lima: Av. Larco 1301, Miraflores</li>
+      </td>
+      <td>
+        <li>Store Hours: 6am - 7pm PST</li>
+      </td>
+    <tr>
+    </table>
+</footer>
 </main>
 </body>
 </html>
