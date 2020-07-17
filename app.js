@@ -30,24 +30,17 @@ function timeDisplay() {
   var mainTable = document.getElementById('mainTable');
   var storeTableRow = document.createElement('tr');
   storeTableRow.appendChild(document.createElement('th'));
+  //loop adds store hours as it iterates from index 0, adding each hr onto the page with textContent property
   for (var i = 0; i < storeHrs.length; i++) {
     var storeHrsTableCell = document.createElement('th');
     storeHrsTableCell.textContent = storeHrs[i];
     storeTableRow.appendChild(storeHrsTableCell);
   }
-
+  var dailyLocationTotal = document.createElement('th'); // had to create table data and store to var
+  dailyLocationTotal.textContent = 'Daily Location Total';
+  storeTableRow.appendChild(dailyLocationTotal); // adding daily location total string to cell
   mainTable.appendChild(storeTableRow);
 }
-
-
-// cookieStore.prototype.calculateCookiesSold =function() {
-//return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min * this.avgCustomerSale);
-// };
-
-//cookiestore.protype.calculateHourlySales = function() {
-//for every hour randomly generate that hours cookies/customers
-//}
-
 
 
 //LAB09 FORM SUBMISSION:
@@ -89,15 +82,20 @@ Store.prototype.render= function() {// Start here for table creation and add htm
     var custThisHour = this.getRandomNum(this.minCust,this.maxCust);
     var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
     this.cookieSalesPerHr.push(cookiesPerHr);//use push method to add cookie sales per hr onto array
-    this.totalCookies = this.totalCookies + cookiesPerHr; //create array for cookie sales each hr
+    this.totalCookies = this.totalCookies + cookiesPerHr;
     var specificHourTableData = document.createElement('td');
     specificHourTableData.textContent = cookiesPerHr;
     storeTableRow.appendChild(specificHourTableData);
   }
 
+  var dailyLocationTotal = document.createElement('td'); // creating daily location total cell
+  dailyLocationTotal.textContent = this.totalCookies;// rendering total cookies into cell
+  storeTableRow.appendChild(dailyLocationTotal); // adding daily locaton numbers to cell
+
   // added the row to the table
   mainTable.appendChild(storeTableRow);
 };
+
 
 
 
