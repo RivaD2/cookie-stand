@@ -145,15 +145,20 @@ limaStore.render();
 function renderHourlyTotals() {
   var mainTable = document.getElementById('mainTable');
   var storeTableRow = document.createElement('tr');
-  var total = document.createElement('th'); // had to create table data and store to var
+  var total = document.createElement('td'); // had to create table data and store to var
+  var grandTotal = 0;
   total.textContent = 'Totals';
   storeTableRow.appendChild(total);
   for (var i = 0; i < storeHrs.length; i++) {
-    var totalsCell = document.createElement('th');
+    var totalsCell = document.createElement('td');
     totalsCell.textContent = totalCookiesPerHour[i];
     storeTableRow.appendChild(totalsCell);
+    grandTotal = grandTotal + totalCookiesPerHour[i];
   }
-   // adding daily location total string to cell
+  // adding daily location total string to cell
+  var grandTotalCell = document.createElement('td');
+  grandTotalCell.textContent = grandTotal;
+  storeTableRow.appendChild(grandTotalCell);
   mainTable.appendChild(storeTableRow);
 }
 
