@@ -79,7 +79,7 @@ img {
 }
 #photos {
   display: inline-block;
-  float: center;
+  margin: 0 auto;
   max-width:90%;
   
 }
