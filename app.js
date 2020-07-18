@@ -10,6 +10,18 @@
 
 var storeHrs = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+var totalCookiesPerHour = [];
+// declared var for TOTAL cookies per hr for ALL locations
+// write a for loop to loop through each of store hours
+
+//now we have an array of zeros and each zero is at an index that cooresponds to store hour
+for (var i = 0; i < storeHrs.length; i++) {
+  totalCookiesPerHour.push(0);
+}
+// we need to add cookiesPerHr that was calculated in the beginning
+
+
+
 function Store (name, minCust, maxCust,avgCustomerSale) {
   this.name = name;
   this.minCust = minCust;
@@ -23,7 +35,7 @@ function Store (name, minCust, maxCust,avgCustomerSale) {
 
 
 //LAB08B
-//TODO: NEW CODE FOR STORE HOURS HEADER, HOURLY TOTALS FOOTER, AND DAILY LOCATION TOTAL ROW// 
+//TODO:  HOURLY TOTALS PER STORE 
 //LAB08B
 
 function timeDisplay() {
@@ -47,7 +59,7 @@ function timeDisplay() {
 
 var storeForm = document.getElementById('addStore');
 storeForm.addEventListener("submit", addStore);
-function addStore(event) {
+function addStore (event) {
   event.preventDefault();
 
   var name =event.target.name.value;
@@ -83,6 +95,9 @@ Store.prototype.render= function() {// Start here for table creation and add htm
     var cookiesPerHr = Math.round(this.avgCustSale * custThisHour);
     this.cookieSalesPerHr.push(cookiesPerHr);//use push method to add cookie sales per hr onto array
     this.totalCookies = this.totalCookies + cookiesPerHr;
+    //we have to have two variables for cookies per hour to represent the totals for each row and column
+    // this is the last table row
+    totalCookiesPerHour[i] = totalCookiesPerHour[i] + cookiesPerHr;
     var specificHourTableData = document.createElement('td');
     specificHourTableData.textContent = cookiesPerHr;
     storeTableRow.appendChild(specificHourTableData);
@@ -127,4 +142,24 @@ dubaiStore.render();
 parisStore.render();
 limaStore.render();
 
+function renderHourlyTotals() {
+  var mainTable = document.getElementById('mainTable');
+  var storeTableRow = document.createElement('tr');
+  var total = document.createElement('td'); // had to create table data and store to var
+  var grandTotal = 0;
+  total.textContent = 'Totals';
+  storeTableRow.appendChild(total);
+  for (var i = 0; i < storeHrs.length; i++) {
+    var totalsCell = document.createElement('td');
+    totalsCell.textContent = totalCookiesPerHour[i];
+    storeTableRow.appendChild(totalsCell);
+    grandTotal = grandTotal + totalCookiesPerHour[i];
+  }
+  // adding daily location total string to cell
+  var grandTotalCell = document.createElement('td');
+  grandTotalCell.textContent = grandTotal;
+  storeTableRow.appendChild(grandTotalCell);
+  mainTable.appendChild(storeTableRow);
+}
 
+renderHourlyTotals();
