@@ -30,6 +30,7 @@ h2 {
   font-family: Comic Sans MS, Calibri;
   margin: 0 auto;
   padding-left: 40px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #pageOneNav {
@@ -43,6 +44,7 @@ h2 {
   font-size: 18px;
   padding-top: 30px;
   padding-left: 70px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #bannerOne {
@@ -69,7 +71,6 @@ h2 {
   margin: 0 auto;
   font-family:'Times New Roman', Times, serif;
   font-style:bold;
-  border: thick 4px;
   padding-bottom: 60px;
 }
 
@@ -126,7 +127,8 @@ footer {
 #addresses {
   float:center;
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #threeFish {
