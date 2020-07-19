@@ -139,10 +139,10 @@ function renderTable() {
   mainTable.innerHTML = '';
   // grab timeDisplay function as this renders the times of the store--so this should be step #1 (delete out old timeDisplay function
   renderTimeDisplay();
-  // using a for loop to cycle through each store in the allStores array and calling allStores.render()
+  // using a for loop to cycle through each store in the allStores array and called allStores.render()
   // The loop will run through the array and render ALL STORES to the table
-  for (var i = 0; i < allStores.length; i++) {
-    allStores[i].render();
+  for (var k = 0; k < allStores.length; k++) {
+    allStores[k].render();
   }
   //rendering hourly totals inside renderTable function to display hourly totals on the table
   renderHourlyTotals();
