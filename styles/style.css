@@ -3,6 +3,7 @@ background-color:rgba(121, 187, 121, 0.733);
 font-family: 'Englebert', sans-serif;
 background-blend-mode: hue;
 }
+
 main {
   margin: 0 auto;
 }
@@ -80,14 +81,17 @@ h2 {
   padding-bottom: 50px;
   border: solid 3px black;
 }
+
 #mainTable td {
   padding: 4px 8px;
   border:solid 1px;
 }
+
 #mainTable th {
   padding: 4px;
   font-weight: bold;
 }
+
 #photos {
   display: inline-table;
   margin: 0 auto;
@@ -95,6 +99,7 @@ h2 {
   height: 250px;
   border: hidden;
 }
+
 #photos td {
   width: 25%;
   background-size: cover;
@@ -130,13 +135,18 @@ footer {
   border: solid 8px rgb(78, 173, 78);
   margin-top: 40px;
 }
+
 #locations {
   font-size: 15px;
   margin: 4px auto;
   float:center;
   color: rgb(27, 88, 27);
-  
 }
+
+#locations td {
+  padding: 6px;
+}
+
 #addresses {
   margin: 4px auto;
   font-size: 15px;
@@ -147,6 +157,10 @@ footer {
   table-layout: inherit;
 }
 
+#addresses td {
+  padding: 6px;
+}
+
 #contactInfo {
   padding-bottom: 20px;
   font-size: 15px;
@@ -155,9 +169,14 @@ footer {
   float: center;
 }
 
+#contactInfo td {
+  padding: 6px;
+}
+
 #threeFish {
   float: right;
 }
+
 #merch {
   margin:0 auto;
 }
