@@ -147,6 +147,10 @@ footer {
   padding: 6px;
 }
 
+#locationsOne td {
+  padding: 6px;
+}
+
 #addresses {
   margin: 4px auto;
   font-size: 15px;
